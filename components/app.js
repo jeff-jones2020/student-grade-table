@@ -6,9 +6,8 @@ class App {
   getGrades() {
     console.log("getGrades running");
     $.ajax({
-      url: "http://sgt.lfzprototypes.com",
+      url: "http://sgt.lfzprototypes.com/api/grades",
       method: "GET",
-      path: "/api/grades",
       headers: {
         "X-Access-Token":"JF3KZ7oy"
       },
