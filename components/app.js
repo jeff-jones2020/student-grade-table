@@ -5,7 +5,6 @@ class App {
     this.gradeTable = gradeTable;
   }
   getGrades() {
-    console.log("getGrades running");
     $.ajax({
       url: "http://sgt.lfzprototypes.com/api/grades",
       method: "GET",
@@ -15,7 +14,6 @@ class App {
       success: this.handleGetGradesSuccess,
       error: this.handleGetGradesError
     });
-    console.log("getGrades has been run");
   }
   start() {
     this.getGrades();
