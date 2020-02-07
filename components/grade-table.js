@@ -1,6 +1,7 @@
 class GradeTable {
-  constructor(tableElement) {
+  constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
   }
 
   updateGrades(grades) {
@@ -10,6 +11,11 @@ class GradeTable {
     for(let i=0; i<grades.length; i++) {
       this.tableBodyEl.append(this.renderGradeRow(grades[i], this.deleteGrade));
     }
+    if(grades){
+      document.getElementById("no-grades-msg").classList.remove("d-none");
+    } else {
+      document.getElementById("no-grades-msg").classList.add("d-none");
+     }
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
