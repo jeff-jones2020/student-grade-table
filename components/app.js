@@ -22,6 +22,7 @@ class App {
   }
   start() {
     this.getGrades();
+    this.gradeForm.onSubmit(this.createGrade);
   }
   handleGetGradesError(error) {
     console.error("Error", error);
