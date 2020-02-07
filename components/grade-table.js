@@ -23,11 +23,12 @@ class GradeTable {
     const deleteButton = document.createElement("button");
     deleteButton.append("DELETE");
     deleteButton.setAttribute("class", "btn btn-danger");
-    deleteButton.addEventListener("click", deleteGrade);
+    deleteButton.addEventListener("click", function(){deleteGrade(data.id);});
     nameToAdd.textContent = data.name;
     courseToAdd.textContent = data.course;
     gradeToAdd.textContent = data.grade;
     operationToAdd.append(deleteButton);
-    rowToAdd.append(nameToAdd, courseToAdd, gradeToAdd);
+    rowToAdd.append(nameToAdd, courseToAdd, gradeToAdd, deleteButton);
+    return rowToAdd;
   }
 }
