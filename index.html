@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
-<section id="content" class="row justify-content-between col-12">
+<section id="content" class="row justify-content-between col-12 mx-auto">
   <header class="row align-items-center justify-content-between col-12">
     <h1 class="col-9">Student Grade Table</h1>
     <h5 class="col-2">
@@ -25,7 +25,7 @@
           <th scope="col">Student Name</th>
           <th scope="col">Course</th>
           <th scope="col">Grade</th>
-          <th scope="col">Operations</th>
+          <th scope="col" class="text-right">Operations</th>
         </tr>
       </thead>
       <tbody>
@@ -53,8 +53,8 @@
       </div>
     </div>
     <div class="input-group mb-3 col-12">
-      <button type="submit" class="btn btn-success">Add</button>
-      <button type="reset" class="btn btn-light">Cancel</button>
+      <button type="submit" class="btn btn-success mr-2">Add</button>
+      <button type="reset" class="btn btn-light btn-outline-danger">Cancel</button>
     </div>
   </form>
   <p id="no-grades-msg" class="d-none container-fluid">No Grades Recorded</p>

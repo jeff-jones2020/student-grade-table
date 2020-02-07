@@ -34,6 +34,7 @@ class GradeTable {
     courseToAdd.textContent = data.course;
     gradeToAdd.textContent = data.grade;
     operationToAdd.append(deleteButton);
+    operationToAdd.classList.add("text-right");
     rowToAdd.append(nameToAdd, courseToAdd, gradeToAdd, operationToAdd);
     return rowToAdd;
   }
