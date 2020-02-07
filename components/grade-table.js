@@ -6,6 +6,7 @@ class GradeTable {
   updateGrades(grades) {
     console.log(grades);
     this.tableBodyEl = this.tableElement.getElementsByTagName("tbody")[0];
+    while(this.tableBodyEl.firstElementChild) {this.tableBodyEl.firstElementChild.remove()};
     for(let i=0; i<grades.length; i++) {
       let rowToAdd = document.createElement("tr");
       let nameToAdd = document.createElement("td");
