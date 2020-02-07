@@ -30,7 +30,16 @@ class App {
     for(let i=0; i<grades.length; i++) {
       sum += grades[i].grade;
     }
-    let average = Math.round(sum / grades.length);
-    this.pageHeader.updateAverage(average);
+    const AVERAGE = Math.round(sum / grades.length);
+    this.pageHeader.updateAverage(AVERAGE);
+  }
+  createGrade(name, course, grade) {
+    console.log("name:", name, "course:", course, "grade:", grade);
+  }
+  handleCreateGradeError(error) {
+    console.error(error);
+  }
+  handleCreateGradeSuccess() {
+    getGrades();
   }
 }
