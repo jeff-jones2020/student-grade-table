@@ -8,7 +8,7 @@ class GradeTable {
     this.tableBodyEl = this.tableElement.getElementsByTagName("tbody")[0];
     while(this.tableBodyEl.firstElementChild) {this.tableBodyEl.firstElementChild.remove()};
     for(let i=0; i<grades.length; i++) {
-      this.tableBodyEl.append(this.renderGradeRow(grades[i]));
+      this.tableBodyEl.append(this.renderGradeRow(grades[i], this.deleteGrade));
     }
   }
   onDeleteClick(deleteGrade) {
