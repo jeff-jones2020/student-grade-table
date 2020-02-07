@@ -66,7 +66,7 @@ class App {
   }
   deleteGrade(id) {
     $.ajax({
-      url: "http://sgt.lfzprototypes.com/api/grades/:grade_id",
+      url: "http://sgt.lfzprototypes.com/api/grades/" + id,
       method: "DELETE",
       headers: {
         "X-Access-Token": "JF3KZ7oy"
