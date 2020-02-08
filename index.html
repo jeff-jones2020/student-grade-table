@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
-<section id="content" class="row justify-content-between col-12 mx-auto">
-  <header class="row align-items-center justify-content-between col-12">
-    <h1 class="col-9">Student Grade Table</h1>
-    <h5 class="col-2">
+<section id="content" class="row justify-content-between col-xl-12 mx-auto container">
+  <header class="row align-items-center justify-content-between col-xl-12">
+    <h1 class="col-xl-8 text-center text-xl-left">Student Grade Table</h1>
+    <h5 class="col-xl-2 text-center">
       Average Grade
       <span class="display-average badge badge-secondary border border-dark px-2 py-1"></span>
     </h5>
 
   </header>
-  <div class="row justify-content-between col-8">
+  <div class="row justify-content-between col-xl-8">
     <table id="grade-table" class="table table-striped">
       <thead class="thead-dark">
         <tr>
@@ -32,8 +32,9 @@
       </tbody>
     </table>
   </div>
+  <p id="no-grades-msg" class="d-none col-xl-8">No Grades Recorded</p>
 
-  <form class="col-3">
+  <form class="col-xl-3 mt-5">
     <div class="input-group mb-3 col-12">
       <div class="input-group-prepend w-100">
         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -57,7 +58,6 @@
       <button type="reset" class="btn btn-light btn-outline-danger">Cancel</button>
     </div>
   </form>
-  <p id="no-grades-msg" class="d-none container-fluid">No Grades Recorded</p>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 <script src="components/page-header.js"></script>
