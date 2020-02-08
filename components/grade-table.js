@@ -1,6 +1,7 @@
 class GradeTable {
-  constructor(tableElement) {
+  constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
   }
 
   updateGrades(grades) {
@@ -8,15 +9,33 @@ class GradeTable {
     this.tableBodyEl = this.tableElement.getElementsByTagName("tbody")[0];
     while(this.tableBodyEl.firstElementChild) {this.tableBodyEl.firstElementChild.remove()};
     for(let i=0; i<grades.length; i++) {
-      let rowToAdd = document.createElement("tr");
-      let nameToAdd = document.createElement("td");
-      let courseToAdd = document.createElement("td");
-      let gradeToAdd = document.createElement("td");
-      nameToAdd.textContent = grades[i].name;
-      courseToAdd.textContent = grades[i].course;
-      gradeToAdd.textContent = grades[i].grade;
-      rowToAdd.append(nameToAdd, courseToAdd, gradeToAdd);
-      this.tableBodyEl.append(rowToAdd);
+      this.tableBodyEl.append(this.renderGradeRow(grades[i], this.deleteGrade));
     }
+    if(grades.length){
+      document.getElementById("no-grades-msg").classList.add("d-none");
+    } else {
+      document.getElementById("no-grades-msg").classList.remove("d-none");
+     }
+  }
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade;
+  }
+  renderGradeRow(data, deleteGrade) {
+    const rowToAdd = document.createElement("tr");
+    const nameToAdd = document.createElement("td");
+    const courseToAdd = document.createElement("td");
+    const gradeToAdd = document.createElement("td");
+    const operationToAdd = document.createElement("td")
+    const deleteButton = document.createElement("button");
+    deleteButton.append("DELETE");
+    deleteButton.setAttribute("class", "btn btn-danger");
+    deleteButton.addEventListener("click", function(){deleteGrade(data.id);});
+    nameToAdd.textContent = data.name;
+    courseToAdd.textContent = data.course;
+    gradeToAdd.textContent = data.grade;
+    operationToAdd.append(deleteButton);
+    operationToAdd.classList.add("text-right");
+    rowToAdd.append(nameToAdd, courseToAdd, gradeToAdd, operationToAdd);
+    return rowToAdd;
   }
 }
