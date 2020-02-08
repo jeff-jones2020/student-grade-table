@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
-<section id="content" class="row justify-content-between col-12 mx-auto">
-  <header class="row align-items-center justify-content-between col-12">
-    <h1 class="col-9">Student Grade Table</h1>
-    <h5 class="col-2">
+<section id="content" class="row justify-content-between col-xl-12 mx-auto container">
+  <header class="row align-items-center justify-content-between col-xl-12">
+    <h1 class="col-xl-8 text-center text-xl-left">Student Grade Table</h1>
+    <h4 class="col-xl-2 text-center">
       Average Grade
-      <span class="display-average badge badge-secondary border border-dark col-2"></span>
-    </h5>
+      <span class="display-average badge badge-secondary border border-dark px-2 py-1"></span>
+    </h4>
 
   </header>
-  <div class="row justify-content-between col-8">
+  <div class="row justify-content-between col-xl-8">
     <table id="grade-table" class="table table-striped">
       <thead class="thead-dark">
         <tr>
@@ -32,32 +32,33 @@
       </tbody>
     </table>
   </div>
+  <p id="no-grades-msg" class="d-none col-xl-8">No Grades Recorded</p>
 
-  <form class="col-3">
-    <div class="input-group mb-3 col-12">
-      <div class="input-group-prepend w-100">
-        <span class="input-group-text"><i class="fas fa-user"></i></span>
-        <input name="name" type="text" placeholder="Name" required class="form-control position-static w-100">
+  <form class="col-11 col-sm-9 col-md-6 col-lg-5 col-xl-3 container-sm mt-5">
+      <h5 class="col-xl-12 text-center text-xl-left">Add a Grade</h5>
+      <div class="input-group mb-3 col-12">
+        <div class="input-group-prepend w-100">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <input name="name" type="text" placeholder="Name" required class="form-control position-static w-100">
+        </div>
       </div>
-    </div>
-    <div class="input-group mb-3 col-12">
-      <div class="input-group-prepend w-100">
-        <span class="input-group-text"><i class="far fa-list-alt"></i></span>
-        <input name="course" type="text" placeholder="Course" required class="form-control position-static w-100">
+      <div class="input-group mb-3 col-12">
+        <div class="input-group-prepend w-100">
+          <span class="input-group-text"><i class="far fa-list-alt"></i></span>
+          <input name="course" type="text" placeholder="Course" required class="form-control position-static w-100">
+        </div>
       </div>
-    </div>
-    <div class="input-group mb-3 col-12">
-      <div class="input-group-prepend w-100">
-        <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
-        <input name="grade" type="number" placeholder="Grade" min=0 max=115 required class="form-control w-100">
+      <div class="input-group mb-3 col-12">
+        <div class="input-group-prepend w-100">
+          <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
+          <input name="grade" type="number" placeholder="Grade" min=0 max=100 required class="form-control w-100">
+        </div>
       </div>
-    </div>
-    <div class="input-group mb-3 col-12">
-      <button type="submit" class="btn btn-success mr-2">Add</button>
-      <button type="reset" class="btn btn-light btn-outline-danger">Cancel</button>
-    </div>
+      <div class="input-group mb-3 col-12">
+        <button type="submit" class="btn btn-success mr-2">Add</button>
+        <button type="reset" class="btn btn-light btn-outline-danger">Cancel</button>
+      </div>
   </form>
-  <p id="no-grades-msg" class="d-none container-fluid">No Grades Recorded</p>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 <script src="components/page-header.js"></script>

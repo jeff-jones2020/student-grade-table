@@ -39,7 +39,9 @@ class App {
       sum += grades[i].grade;
     }
     const AVERAGE = Math.round(sum / grades.length);
-    this.pageHeader.updateAverage(AVERAGE);
+    if (isNaN(AVERAGE)) {
+      this.pageHeader.updateAverage("N/A");
+    } else { this.pageHeader.updateAverage(AVERAGE); }
   }
   createGrade(name, course, grade) {
     console.log("name:", name, "course:", course, "grade:", grade);
