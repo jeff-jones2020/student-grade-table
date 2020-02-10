@@ -83,4 +83,15 @@ class App {
   handleDeleteGradeSuccess() {
     this.getGrades();
   }
+  updateGrade(id) {
+    $.ajax({
+      url: "http://sgt.lfzprototypes.com/api/grades/" + id,
+      method: "PATCH",
+      headers: {
+        "X-Access-Token": "JF3KZ7oy"
+      },
+      success: this.handleCreateGradeSuccess,
+      error: this.handleDeleteGradeError
+    })
+  }
 }
